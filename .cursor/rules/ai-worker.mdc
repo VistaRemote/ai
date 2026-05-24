@@ -1,0 +1,13 @@
+---
+description: AI Worker 仓库约定
+globs: "**/*.{ts,tsx,js,mjs}"
+alwaysApply: false
+---
+
+# AI Worker (`ai`)
+
+- **主栈 Node/TS**：BullMQ、LLM 编排（LangChain.js / LangGraph.js）、RAG、回调 server。
+- **私有化默认**：`AI_BASE_URL` → Ollama/vLLM；`VECTOR_DB_URL` → Qdrant。禁止默认调用公网 OpenAI。
+- **Python 仅重 ML**：`PYTHON_ML_URL` → `python-worker`；server **不得**直连 Python。
+- 端侧实时监控在 `desktop`；本仓做摘要、报告、流程优化、`behavior.cloud_infer` 调度。
+- 回调 server 内网 API（HMAC）；Job/DTO 在 `@vistaremote/shared`。

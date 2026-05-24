@@ -1,0 +1,27 @@
+# @see tooling/templates/gitignore.node-ts
+
+node_modules/
+.pnpm-store/
+dist/
+.rslib/
+.rsbuild/
+build/
+
+.env
+.env.local
+.env.*.local
+!.env.example
+
+coverage/
+.rstest-temp/
+*.log
+.DS_Store
+*.tsbuildinfo
+.cache/
+
+# Python worker
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python-version
